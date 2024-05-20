@@ -29,7 +29,9 @@ The main objective is to turn the diagnosis from a subjective perspective to an 
 <a name="dataset"></a>
 ## Dataset
 This dataset is unique as it has an age range between 0 and 16.2 years, unlike other open-source datasets that range from pediatrics to old age.
-it was taken from 140 female and 150 male.
+
+it was taken from 140 female and 152 male.
+
 the method of acquisation was through a digital stethoscope (Yunting model II Stethoscope, Yunting II).
 <a name="source"></a>
 ### Data source 
@@ -45,9 +47,26 @@ Each record contain multiple ***events***
 
 In the .json file you will find the record and the event annotation.
 
-The record annotation could be normal ,poor quality ,CAS, DAS, CAS&DAS which describe the label of the whole signal
+The record annotation which describe the label of the whole signal could be :
 
-The event annotation contain the start and end time of the event in record and the type of event which could be normal,Fine Crackle,Wheeze,Coarse-Crackle,Rhonchi,Wheeze+Crackle,Stridor
+- normal
+- poor quality
+- CAS
+- DAS
+- CAS&DAS 
+
+The event annotation contains: 
+
+- the start and end time of the event in record
+- the type of event which could be:
+  - normal
+  -  Fine Crackle
+  - Wheeze
+  - Coarse-Crackle
+  - Rhonchi
+  - Wheeze+Crackle
+  - Stridor
+
 
 In case of poor quality the event annotation are empty
 <a name="ratio"></a>
