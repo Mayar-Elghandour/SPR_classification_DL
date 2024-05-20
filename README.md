@@ -5,7 +5,7 @@
      1. [Data source](#source)
      2. [Data structure](#structure)
      3. [Data ratio](#ratio)
-3. [Results]()
+3. [Results](#result)
    1. [ResNet 18 using STFT spectrogram](#1)
    2. [ResNet 18 using LOG STFT spectrogram](#2)
    3. [VGG 16 using STFT spectrogram](#3)
