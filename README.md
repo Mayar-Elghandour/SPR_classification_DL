@@ -62,17 +62,17 @@ This plots the data on event level
 ## Implementation
 ### Data perparation
 <div>
-  <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/data_perparation.png">
+  <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/data perparation.png">
 </div>
 
 ### classification
 Instead of converting all audio files into spectrograms (which uses alot of  time and memory)and then creating a dataframe, I’ve went for a more efficient approach. I’ve developed a class that accepts an audio file and its corresponding label as inputs. This class is responsible for transforming the audio file into the desired type of spectrogram. Once the spectrogram is generated, it’s saved as a .png image, which is then resized to meet the model’s input requirements of 224x224 pixels. The image is subsequently converted into a tensor. The class returns this tensor along with its label, thereby constructing a dataset ready for use whenever the model requests it.
 
 <div>
-  <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/mydataset_class.png">
+  <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/mydataset class.png">
 </div>
 <div>
-  <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/model.png">
+  <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/models.png">
 </div>
 <a name="result"></a>
 
