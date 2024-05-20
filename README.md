@@ -21,8 +21,9 @@ this the output of the vgg 16 using log spect
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/confusion.png?raw=true">
 </div>
 <div>
-  <img src="[https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/confusion.png?raw=true](https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/roc.png?raw=true)">
+  <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/roc.png?raw=true">
 </div>
+
 ## Instructions
 the data analysis is only for knowledge about the dataset
 to run the code first run the data preparation then run the model either classification using the stft spectrogram or classification using the log stft spectrogram
