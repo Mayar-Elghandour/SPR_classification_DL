@@ -4,7 +4,7 @@
 2. [Dataset](#dataset)
      1. [Data source](#source)
      2. [Data structure](#structure)
-     3. [Data ratio](#ratio)
+     3. [Data proportions](#ratio)
 3. [Implementation](#imp)
      1. [data preparation](#dataperp)
      2. [classification](#class)
@@ -70,7 +70,7 @@ The event annotation contains:
 
 In case of poor quality the event annotation are empty
 <a name="ratio"></a>
-### Data ratio
+### Data proportions
 <div>
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/dataratio.jpg">
 </div>
