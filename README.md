@@ -31,7 +31,7 @@ The main objective is to turn the diagnosis from a subjective perspective to an 
 This dataset is unique as it has an age range between 0 and 16.2 years, unlike other open-source datasets that range from pediatrics to old age.
 <a name="source"></a>
 ### Data source 
-The dataset used is the[SPR Sound:  SJTU Paediatric Respiratory Sound Database](https://github.com/SJTU-YONGFU-RESEARCH-GRP/SPRSound)
+The dataset used is the [SPR Sound:  SJTU Paediatric Respiratory Sound Database](https://github.com/SJTU-YONGFU-RESEARCH-GRP/SPRSound)
 
  
 <a name="structure"></a>
@@ -40,6 +40,7 @@ The data set consists of audio signal (.wav ) and labels in (.json )
 
 Each signal is called ***record*** &
 Each record contain multiple ***events***
+
 In the .json file you will find the record and the event annotation.
 
 The record annotation could be normal ,poor quality ,CAS, DAS, CAS&DAS which describe the label of the whole signal
@@ -74,6 +75,7 @@ Instead of converting all audio files into spectrograms (which uses alot of  tim
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/model.png">
 </div>
 <a name="result"></a>
+
 ## Results
 <a name="1"></a>
 #### This is the output of the **Resnet18** using *stft* spect
