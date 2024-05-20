@@ -29,6 +29,8 @@ The main objective is to turn the diagnosis from a subjective perspective to an 
 <a name="dataset"></a>
 ## Dataset
 This dataset is unique as it has an age range between 0 and 16.2 years, unlike other open-source datasets that range from pediatrics to old age.
+it was taken from 140 female and 150 male.
+the method of acquisation was through a digital stethoscope (Yunting model II Stethoscope, Yunting II).
 <a name="source"></a>
 ### Data source 
 The dataset used is the [SPR Sound:  SJTU Paediatric Respiratory Sound Database](https://github.com/SJTU-YONGFU-RESEARCH-GRP/SPRSound)
@@ -168,4 +170,4 @@ Zhang, Q., Zhang, J., Yuan, J., Huang, H., Zhang, Y., Zhang, B., Lv, G., Lin, S.
 ## kaggle notebooks for further insight
 1. [data analysis](https://www.kaggle.com/code/mayarelghandour/spr-data-analysis)
 2. [signal data perparation](https://www.kaggle.com/code/mayarelghandour/signal-data-preparation)
-3. [model notebooks](https://www.kaggle.com/code/mayarelghandour/final-models) version 12 contain the log stft classification &version 11 contain the stft classification
+3. [model notebooks](https://www.kaggle.com/code/mayarelghandour/final-models) **version 12** contain the ***log stft*** classification & **version 11** contain the ***stft*** classification
