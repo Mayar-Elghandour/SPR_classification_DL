@@ -5,15 +5,19 @@
      1. [Data source](#source)
      2. [Data structure](#structure)
      3. [Data ratio](#ratio)
-3. [Results](#result)
+3. [Implementation]()
+     1. [data preparation]()
+     2. [classification]()
+4. [Results](#result)
    1. [ResNet 18 using STFT spectrogram](#1)
    2. [ResNet 18 using LOG STFT spectrogram](#2)
    3. [VGG 16 using STFT spectrogram](#3)
    4. [VGG 16 using LOG STFT spectrogram](#4)
-4. [Instructions](#instruction)
-5. [References](#ref)
-6. [Kaggle Datasets](#kdataset)
-7. [Kaggle Notebooks](#knote)
+5. [Instructions](#instruction)
+6. [References](#ref)
+7. [Kaggle Datasets](#kdataset)
+8. [Kaggle Notebooks](#knote)
+
 
 
 <a name="intro"></a>
@@ -53,6 +57,10 @@ This plots the data on event level
 - 0 is normal
 - 1 is abnormal (includes Fine Crackle,Wheeze,Coarse-Crackle,Rhonchi,Wheeze+Crackle,Stridor)
 - 2 is poor quality
+<a name="imp"></a>
+## Implementation
+
+
 <a name="result"></a>
 ## Results
 <a name="1"></a>
@@ -108,10 +116,11 @@ This plots the data on event level
 **Note that** in the dataset (kaggle 2 dadtaset ), I will provide below, have the final models saved for each type of spectrogram (with the best wiegths)
 <a name="instruction"></a>
 ## Instructions
-- the data analysis is only for gainig knowledge about the dataset
-- to run the code first run the data preparation notebook , keep in mind downloding the dataset for each notebook or work directly in kaggle using the datasets i will provide in the kaggle dataset section,then run the model either the classification using the stft spectrogram or the classification using the log stft spectrogram
+to properly use the code
+1.run the data preparation notebook , keep in mind downloding the dataset for each notebook or work directly in kaggle using the datasets that I will provide in the [kaggle dataset section](kdataset).
+2. run the model either the classification using the stft spectrogram or the classification using the log stft spectrogram
 
-##### Note that in the dataset [kaggle 2 dataset](#kdataset), provided in kaggle dataset segment, have the final models both the VGG 16 & ResNet 18 saved for each type of spectrogram
+##### Note that in the dataset (kaggle 2 dataset), provided in [kaggle dataset section](kdataset), have the final models for both the VGG 16 & ResNet 18 saved for each type of spectrogram
 
 <a name="ref"></a>
 ## References
