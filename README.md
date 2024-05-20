@@ -7,14 +7,23 @@ This project focuses on the classification of breathing sounds at the event leve
 The dataset used is the[SPR Sound:  SJTU Paediatric Respiratory Sound Database](https://github.com/SJTU-YONGFU-RESEARCH-GRP/SPRSound) This dataset is unique as it has an age range between 0 and 16.2 years, unlike other open-source datasets that range from pediatrics to old age. 
 
 The data set consists of audio signal (.wav format ) and labels in (.json )
-Each signal is called *record*
+
+Each signal is called *record* &
 Each record contain multiple *events*
-In the .json file you will find the record and the event annotation 
-The record annotation could be normal ,poor quality ,CAS, DAS, CAS&DAS which describe the whole signal label 
-the event annotation contain the start and end time of the event in record and the type of event which could be normal,Fine Crackle,Wheeze,Coarse-Crackle,Rhonchi,Wheeze+Crackle,Stridor
+In the .json file you will find the record and the event annotation.
+
+The record annotation could be normal ,poor quality ,CAS, DAS, CAS&DAS which describe the label of the whole signal
+
+The event annotation contain the start and end time of the event in record and the type of event which could be normal,Fine Crackle,Wheeze,Coarse-Crackle,Rhonchi,Wheeze+Crackle,Stridor
 
 In case of poor quality the event annotation are empty
 
+## The data ratio
+<div>
+  <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/dataratio.jpg">
+</div>
+this plots the data on event level
+0 is normal ,1 is abnormal (includes Fine Crackle,Wheeze,Coarse-Crackle,Rhonchi,Wheeze+Crackle,Stridor) ,2 is poor quality
 
 ## Results
 this the output of the **Resnet18** using *stft* spect
@@ -66,5 +75,7 @@ Zhang, Q., Zhang, J., Yuan, J., Huang, H., Zhang, Y., Zhang, B., Lv, G., Lin, S.
 
 ## kaggle notebooks for further insight
 1-[data analysis](https://www.kaggle.com/code/mayarelghandour/spr-data-analysis)
+
 2-[signal data perparation[](](https://www.kaggle.com/code/mayarelghandour/signal-data-preparation)
+
 3-[model notebooks](https://www.kaggle.com/code/mayarelghandour/final-models) version 12 contain the log stft classification &version 11 contain the stft classification
