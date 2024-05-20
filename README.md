@@ -31,7 +31,7 @@ The main objective is to turn the diagnosis from a subjective perspective to an 
 This dataset is unique as it has an age range between 0 and 16.2 years, unlike other open-source datasets that range from pediatrics to old age.
 <a name="source"></a>
 ### Data source 
-The dataset used is the [SPR Sound:  SJTU Paediatric Respiratory Sound Database](https://github.com/SJTU-YONGFU-RESEARCH-GRP/SPRSound)
+The dataset used is the[SPR Sound:  SJTU Paediatric Respiratory Sound Database](https://github.com/SJTU-YONGFU-RESEARCH-GRP/SPRSound)
 
  
 <a name="structure"></a>
@@ -40,9 +40,7 @@ The data set consists of audio signal (.wav ) and labels in (.json )
 
 Each signal is called ***record*** &
 Each record contain multiple ***events***
-
 In the .json file you will find the record and the event annotation.
-
 
 The record annotation could be normal ,poor quality ,CAS, DAS, CAS&DAS which describe the label of the whole signal
 
@@ -50,7 +48,7 @@ The event annotation contain the start and end time of the event in record and t
 
 In case of poor quality the event annotation are empty
 <a name="ratio"></a>
-### The data ratio
+### Data ratio
 <div>
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/dataratio.jpg">
 </div>
@@ -61,8 +59,20 @@ This plots the data on event level
 - 2 is poor quality
 <a name="imp"></a>
 ## Implementation
+### Data perparation
+<div>
+  <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/data_perparation.png">
+</div>
 
+### classification
+Instead of converting all audio files into spectrograms (which uses alot of  time and memory)and then creating a dataframe, I’ve went for a more efficient approach. I’ve developed a class that accepts an audio file and its corresponding label as inputs. This class is responsible for transforming the audio file into the desired type of spectrogram. Once the spectrogram is generated, it’s saved as a .png image, which is then resized to meet the model’s input requirements of 224x224 pixels. The image is subsequently converted into a tensor. The class returns this tensor along with its label, thereby constructing a dataset ready for use whenever the model requests it.
 
+<div>
+  <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/mydataset_class.png">
+</div>
+<div>
+  <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/model.png">
+</div>
 <a name="result"></a>
 ## Results
 <a name="1"></a>
