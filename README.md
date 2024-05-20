@@ -111,7 +111,7 @@ This plots the data on event level
 - the data analysis is only for gainig knowledge about the dataset
 - to run the code first run the data preparation notebook , keep in mind downloding the dataset for each notebook or work directly in kaggle using the datasets i will provide in the kaggle dataset section,then run the model either the classification using the stft spectrogram or the classification using the log stft spectrogram
 
-### Note that in the dataset (kaggle 2 dadtaset ), I will provide in refrences, have the final models saved for each type of spectrogram
+##### Note that in the dataset [kaggle 2 dataset](#kdataset), provided in kaggle dataset segment, have the final models both the VGG 16 & ResNet 18 saved for each type of spectrogram
 
 <a name="ref"></a>
 ## References
