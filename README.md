@@ -5,9 +5,9 @@
      1. [Data source](#source)
      2. [Data structure](#structure)
      3. [Data ratio](#ratio)
-3. [Implementation]()
-     1. [data preparation]()
-     2. [classification]()
+3. [Implementation](#imp)
+     1. [data preparation](#dataperp)
+     2. [classification](#class)
 4. [Results](#result)
    1. [ResNet 18 using STFT spectrogram](#1)
    2. [ResNet 18 using LOG STFT spectrogram](#2)
@@ -60,20 +60,41 @@ This plots the data on event level
 - 2 is poor quality
 <a name="imp"></a>
 ## Implementation
+<a name="dataperp"></a>
 ### Data perparation
 <div>
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/data perparation.png">
 </div>
 
+*this flow chart explain the process that happen in the data preparation notebook*
+<a name="class"></a>
 ### classification
-Instead of converting all audio files into spectrograms (which uses alot of  time and memory)and then creating a dataframe, I’ve went for a more efficient approach. I’ve developed a class that accepts an audio file and its corresponding label as inputs. This class is responsible for transforming the audio file into the desired type of spectrogram. Once the spectrogram is generated, it’s saved as a .png image, which is then resized to meet the model’s input requirements of 224x224 pixels. The image is subsequently converted into a tensor. The class returns this tensor along with its label, thereby constructing a dataset ready for use whenever the model requests it.
 
 <div>
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/mydataset class.png">
 </div>
+
+*flowchart of the mydataset class*
+
+***the function of this class:***
+
+Instead of converting all audio files into spectrograms (which uses alot of  time and memory)and then creating a dataframe, I’ve went for a more efficient approach. I’ve developed a class that accepts an audio file and its corresponding label as inputs. This class is responsible for transforming the audio file into the desired type of spectrogram. Once the spectrogram is generated, it’s saved as a .png image, which is then resized to meet the model’s input requirements of 224x224 pixels. The image is subsequently converted into a tensor. The class returns this tensor along with its label, thereby constructing a dataset ready for use whenever the model requests it.
+
+##### Note that : this is the major difference in code between the two classification notebook as one has stft spectrogram transformation inside the class & the other has log stft
+
+
 <div>
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/models.png">
 </div>
+
+*this flow chart explain the process that happen in the classfication notebook*
+
+
+#### other functions in the notebook are the plotting and the calculation of accuracy
+
+- in the calculate_accuracy function: it keeps count of how many the model get the correct prediction then divides it by the total number of predictions
+- in the plot_metrics function: the plotting of the confusion metrics , the ROC and the classification report is placed in a function to make it easier to use and call
+
 <a name="result"></a>
 
 ## Results
