@@ -181,6 +181,7 @@ to properly use the code
 <a name="ref"></a>
 ## References
 Zhang, Q., Zhang, J., Yuan, J., Huang, H., Zhang, Y., Zhang, B., Lv, G., Lin, S., Wang, N., Liu, X., Tang, M., Wang, Y., Ma, H., Liu, L., Yuan, S., Zhou, H., Zhao, J., Li, Y., Yin, Y., … Lian, Y. (2022). SPRSound: Open-source SJTU Paediatric Respiratory Sound Database. IEEE Transactions on Biomedical Circuits and Systems, 16(5), 867–881. https://doi.org/10.1109/tbcas.2022.3204910  
+Dataset link:   https://github.com/SJTU-YONGFU-RESEARCH-GRP/SPRSound
 <a name="kdataset"></a>
 ## Kaggle Datasets
 - For the data analysis and data preparation, the full dataset and related papers can be found here.[kaggle 1 dataset](https://www.kaggle.com/datasets/mayarelghandour/sprsound-nosplit/data)
