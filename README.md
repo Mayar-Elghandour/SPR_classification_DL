@@ -8,6 +8,7 @@
 3. [Implementation](#imp)
      1. [data preparation](#dataperp)
      2. [classification](#class)
+     3. [hyperparameters](#hype)
 4. [Results](#result)
    1. [ResNet 18 using STFT spectrogram](#1)
    2. [ResNet 18 using LOG STFT spectrogram](#2)
@@ -32,7 +33,7 @@ This dataset is unique as it has an age range between 0 and 16.2 years, unlike o
 
 it was taken from 140 female and 152 male.
 
-the method of acquisation was through a digital stethoscope (Yunting model II Stethoscope, Yunting II).
+the method of acquisition was through a digital stethoscope (Yunting model II Stethoscope, Yunting II).
 <a name="source"></a>
 ### Data source 
 The dataset used is the [SPR Sound:  SJTU Paediatric Respiratory Sound Database](https://github.com/SJTU-YONGFU-RESEARCH-GRP/SPRSound)
@@ -42,7 +43,7 @@ The dataset used is the [SPR Sound:  SJTU Paediatric Respiratory Sound Database]
 ### Data structure
 The data set consists of audio signal (.wav ) and labels in (.json )
 
-Each signal is called ***record*** &
+Each signal is called ***record***. & 
 Each record contain multiple ***events***
 
 In the .json file you will find the record and the event annotation.
@@ -74,7 +75,7 @@ In case of poor quality the event annotation are empty
 <div>
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/dataratio.jpg">
 </div>
-This plots the data on event level
+This plots the data at the event level
 
 - 0 is normal
 - 1 is abnormal (includes Fine Crackle,Wheeze,Coarse-Crackle,Rhonchi,Wheeze+Crackle,Stridor)
@@ -87,7 +88,7 @@ This plots the data on event level
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/data perparation.png">
 </div>
 
-*this flow chart explain the process that happen in the data preparation notebook*
+*This flow chart explain the process that happen in the data preparation notebook*
 
 
 which starts with a process for handling data from a JSON file. It involves extracting and encoding data 
@@ -95,7 +96,7 @@ which starts with a process for handling data from a JSON file. It involves extr
      - 0 normal
      - 1 abnormal
      - 2 poor quality
-then removed poor quality entries and outliers ( the outliers are the events with very long time compared to the rest)
+then removes poor quality entries and outliers ( the outliers are the events with very long time compared to the rest)
 then balancing the dataset by removing the extra normal events to make the no. of normal events equal to the abnormal, then
 applying a sound filter (bandpass filter )
 ,also splitting the data into events, and saving these events into a dataframe called event processed then saving this file as csv 
@@ -110,7 +111,7 @@ can be found in kaggle 2 dataset in the [kaggle dataset section](#kdataset)
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/mydataset class.png">
 </div>
 
-*flowchart of the mydataset class*
+*Flowchart of the MyDataset class*
 
 ***the function of this class:***
 
@@ -125,7 +126,7 @@ Instead of converting all audio files into spectrograms (which uses alot of  tim
 
 *this flow chart explain the process that happen in the classfication notebook*
 
-to train the model we first split the dataframe (event processed) into train, test & validation (the train test split was 90%,10% respectively) then we feed that dataframe into [the mydatasetclass](#class) explained above , then through the data loader into the model and when the validation accuracy is seen decreasing we stop training then we test and plot as seen below in the [results](#result) .
+To train the model we first split the dataframe (event processed) into train, test & validation (the train test split was 90%,10% respectively) then we feed that dataframe into [the mydatasetclass](#class) explained above , then through the data loader into the model and when the validation accuracy is seen decreasing we stop training then we test and plot as seen below in the [results](#result) .
 
 #### other functions in the notebook
 
@@ -133,9 +134,9 @@ to train the model we first split the dataframe (event processed) into train, te
   it keeps count of how many times the model gets the correct prediction then divides it by the total number of predictions
 - ##### in the plot_metrics function:
   the plotting of the confusion metrics , the ROC and the classification report is placed in a function to make it easier to use and call
-
-### hyper parameters 
-| hyperparameter| value                 |
+  <a name="hype"></a>
+### Hyperparameters 
+| parameter     | value                 |
 | :------------ |:---------------------:| 
 |dpi            | 100                   |
 |figuresize     | (2.24,2.24)           |
@@ -199,13 +200,13 @@ to train the model we first split the dataframe (event processed) into train, te
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/vgglog.jpg">
 </div>
 
-**Note that** in the dataset (kaggle 2 dataset ), I will provide below, have the final models saved for each type of spectrogram (with the best wiegths)
+**Note that** in the dataset (kaggle 2 dataset ), I will provide [below](#kdataset), have the final models saved for each type of spectrogram (with the best weights)
 <a name="instruction"></a>
 ## Instructions
 to properly use the code
 
-1. run the data preparation notebook , keep in mind downloding the dataset for each notebook or work directly in kaggle using the datasets that I will provide in the [kaggle dataset section](kdataset).
-2. run the model either the classification using the STFT spectrogram or the classification using the log STFT spectrogram
+1. Run the data preparation notebook. keep in mind downloading the dataset for each notebook or work directly in kaggle using the datasets that I will provide in the [kaggle dataset section](kdataset).
+2. Run the model either the classification using the STFT spectrogram or the classification using the log STFT spectrogram
 
 ##### Note that in the dataset (kaggle 2 dataset), provided in [kaggle dataset section](kdataset), have the final models for both the VGG 16 & ResNet 18 saved for each type of spectrogram
 
