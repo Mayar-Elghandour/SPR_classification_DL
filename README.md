@@ -89,6 +89,20 @@ This plots the data on event level
 
 *this flow chart explain the process that happen in the data preparation notebook*
 
+
+which starts with a process for handling data from a JSON file. It involves extracting and encoding data 
+
+     - 0 normal
+     - 1 abnormal
+     - 2 poor quality
+then removed poor quality entries and outliers ( the outliers are the events with very long time compared to the rest)
+then balancing the dataset by removing the extra normal events to make the no. of normal events equal to the abnormal, then
+applying a sound filter (bandpass filter )
+,also splitting the data into events, and saving these events into a dataframe called event processed then saving this file as csv 
+can be found in kaggle 2 dataset in the [kaggle dataset section](#kdataset)
+
+
+
 <a name="class"></a>
 ### classification
 
@@ -111,6 +125,7 @@ Instead of converting all audio files into spectrograms (which uses alot of  tim
 
 *this flow chart explain the process that happen in the classfication notebook*
 
+to train the model we first split the dataframe (event processed) into train, test & validation (the train test split was 90%,10% respectively) then we feed that dataframe into [the mydatasetclass](#class) explained above , then through the data loader into the model and when the validation accuracy is seen decreasing we stop training then we test and plot as seen below in the [results](#result) .
 
 #### other functions in the notebook
 
