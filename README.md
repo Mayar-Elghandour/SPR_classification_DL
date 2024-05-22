@@ -88,6 +88,7 @@ This plots the data on event level
 </div>
 
 *this flow chart explain the process that happen in the data preparation notebook*
+
 <a name="class"></a>
 ### classification
 
@@ -111,10 +112,30 @@ Instead of converting all audio files into spectrograms (which uses alot of  tim
 *this flow chart explain the process that happen in the classfication notebook*
 
 
-#### other functions in the notebook are the plotting and the calculation of accuracy
+#### other functions in the notebook
 
-- in the calculate_accuracy function: it keeps count of how many the model get the correct prediction then divides it by the total number of predictions
-- in the plot_metrics function: the plotting of the confusion metrics , the ROC and the classification report is placed in a function to make it easier to use and call
+- ##### in the calculate_accuracy function:
+  it keeps count of how many times the model gets the correct prediction then divides it by the total number of predictions
+- ##### in the plot_metrics function:
+  the plotting of the confusion metrics , the ROC and the classification report is placed in a function to make it easier to use and call
+
+### hyper parameters 
+`DPI=100`
+
+`figuresize=(2.24,2.24)`
+
+`img_size=(224,224)`
+
+`Batch_size=10`
+
+`learn_rate=0.001`
+
+`Momentum=0.9`
+
+`patience=3 this is for early stopping`
+
+`train_test split was 90% ,10%`
+`validation was 10% of the train`
 
 <a name="result"></a>
 
@@ -169,11 +190,12 @@ Instead of converting all audio files into spectrograms (which uses alot of  tim
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/vgglog.jpg">
 </div>
 
-**Note that** in the dataset (kaggle 2 dadtaset ), I will provide below, have the final models saved for each type of spectrogram (with the best wiegths)
+**Note that** in the dataset (kaggle 2 dataset ), I will provide below, have the final models saved for each type of spectrogram (with the best wiegths)
 <a name="instruction"></a>
 ## Instructions
 to properly use the code
-1.run the data preparation notebook , keep in mind downloding the dataset for each notebook or work directly in kaggle using the datasets that I will provide in the [kaggle dataset section](kdataset).
+
+1. run the data preparation notebook , keep in mind downloding the dataset for each notebook or work directly in kaggle using the datasets that I will provide in the [kaggle dataset section](kdataset).
 2. run the model either the classification using the stft spectrogram or the classification using the log stft spectrogram
 
 ##### Note that in the dataset (kaggle 2 dataset), provided in [kaggle dataset section](kdataset), have the final models for both the VGG 16 & ResNet 18 saved for each type of spectrogram
