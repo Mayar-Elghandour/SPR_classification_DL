@@ -116,7 +116,7 @@ can be found in kaggle 2 dataset in the [kaggle dataset section](#kdataset)
 
 Instead of converting all audio files into spectrograms (which uses alot of  time and memory)and then creating a dataframe, I’ve went for a more efficient approach. I’ve developed a class that accepts an audio file and its corresponding label as inputs. This class is responsible for transforming the audio file into the desired type of spectrogram. Once the spectrogram is generated, it’s saved as a .png image, which is then resized to meet the model’s input requirements of 224x224 pixels. The image is subsequently converted into a tensor. The class returns this tensor along with its label, thereby constructing a dataset ready for use whenever the model requests it.
 
-##### Note that : this is the major difference in code between the two classification notebook as one has stft spectrogram transformation inside the class & the other has log stft
+##### Note that : this is the major difference in code between the two classification notebook as one has STFT spectrogram transformation inside the class & the other has log STFT
 
 
 <div>
@@ -135,28 +135,22 @@ to train the model we first split the dataframe (event processed) into train, te
   the plotting of the confusion metrics , the ROC and the classification report is placed in a function to make it easier to use and call
 
 ### hyper parameters 
-`DPI=100`
-
-`figuresize=(2.24,2.24)`
-
-`img_size=(224,224)`
-
-`Batch_size=10`
-
-`learn_rate=0.001`
-
-`Momentum=0.9`
-
-`patience=3 this is for early stopping`
-
-`train_test split was 90% ,10%`
-`validation was 10% of the train`
+| hyperparameter| value                 |
+| :------------ |:---------------------:| 
+|dpi            | 100                   |
+|figuresize     | (2.24,2.24)           |
+| Batch size    | 10                    |
+|learn rate     | 0.001                 |
+|Momentum       | 0.9                   |
+|train          | 90 % of the whole data|
+|valid          | 9%of the whole data   |
+|test           | 10 %of the whole data |
 
 <a name="result"></a>
 
 ## Results
 <a name="1"></a>
-#### This is the output of the **Resnet18** using *stft* spect
+#### This is the output of the **Resnet18** using *STFT* spectrogram
 <div>
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/resnetstftconfusionmatrix.jpg">
 </div>
@@ -169,7 +163,7 @@ to train the model we first split the dataframe (event processed) into train, te
 
 <a name="2"></a>
 
-#### This is the output of the **Resnet18** using *log stft* spect
+#### This is the output of the **Resnet18** using *log STFT* spectrogram
 <div>
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/resnetlogconfusionmatrix.jpg">
 </div>
@@ -182,7 +176,7 @@ to train the model we first split the dataframe (event processed) into train, te
 
 <a name="3"></a>
 
-#### This is the output of the **vgg 16** using *stft* spect
+#### This is the output of the **vgg 16** using *STFT* spectrogram
 <div>
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/vggstftconfusionmatrix.jpg">
 </div>
@@ -194,7 +188,7 @@ to train the model we first split the dataframe (event processed) into train, te
 </div>
 <a name="4"></a>
 
-#### This is the output of the **vgg 16** using *log stft* spect
+#### This is the output of the **vgg 16** using *log STFT* spectrogram
 <div>
   <img src="https://github.com/Mayar-Elghandour/SPR_classification_DL/blob/main/images/vgglogconfusionmatrix.jpg">
 </div>
@@ -211,7 +205,7 @@ to train the model we first split the dataframe (event processed) into train, te
 to properly use the code
 
 1. run the data preparation notebook , keep in mind downloding the dataset for each notebook or work directly in kaggle using the datasets that I will provide in the [kaggle dataset section](kdataset).
-2. run the model either the classification using the stft spectrogram or the classification using the log stft spectrogram
+2. run the model either the classification using the STFT spectrogram or the classification using the log STFT spectrogram
 
 ##### Note that in the dataset (kaggle 2 dataset), provided in [kaggle dataset section](kdataset), have the final models for both the VGG 16 & ResNet 18 saved for each type of spectrogram
 
@@ -227,4 +221,4 @@ to properly use the code
 ## kaggle notebooks for further insight
 1. [data analysis](https://www.kaggle.com/code/mayarelghandour/spr-data-analysis)
 2. [signal data perparation](https://www.kaggle.com/code/mayarelghandour/signal-data-preparation)
-3. [model notebooks](https://www.kaggle.com/code/mayarelghandour/final-models) **version 12** contain the ***log stft*** classification & **version 11** contain the ***stft*** classification
+3. [model notebooks](https://www.kaggle.com/code/mayarelghandour/final-models) **version 12** contain the ***log STFT*** classification & **version 11** contain the ***STFT*** classification
