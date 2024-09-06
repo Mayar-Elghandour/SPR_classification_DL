@@ -144,7 +144,7 @@ To train the model we first split the dataframe (event processed) into train, te
 |learn rate     | 0.001                 |
 |Momentum       | 0.9                   |
 |train          | 90 % of the whole data|
-|valid          | 9%of the whole data   |
+|valid          | 9%of the train data   |
 |test           | 10 %of the whole data |
 
 <a name="result"></a>
